@@ -16,7 +16,8 @@ var Calculator = {
             pos=n.length-1;
         if(pos==0)
             return n[0];
-        return(n[pos] + this.sum(n,pos-1))/(n.length);
+        this.ans = (n[pos] + this.sum(n,pos-1))/(n.length);
+        return this.ans;
     },
 
     max: function(lista,pos,n){
@@ -52,7 +53,7 @@ var Calculator = {
             pos=n.length-1;
         if(pos==0)
             return n[0];
-        this.ans = n[pos] - this.subtract(n,pos-1);
+        this.ans = this.subtract(n,pos-1)- n[pos];
         return this.ans;
     },
 
